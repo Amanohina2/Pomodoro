@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomodoro Timer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Syne:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="card timer-card">
+        <header class="app-header fade-up">
+          <p class="eyebrow">Stay Focused</p>
+          <h1>Pomodoro</h1>
+        </header>
+
+        <nav class="mode-tabs fade-up" aria-label="Timer Mode">
+          <button class="mode-btn active" data-mode="focus">Focus</button>
+          <button class="mode-btn" data-mode="shortBreak">Short Break</button>
+          <button class="mode-btn" data-mode="longBreak">Long Break</button>
+        </nav>
+
+        <div class="timer-wrap fade-up">
+          <div class="timer-ring" aria-hidden="true"></div>
+          <div class="timer-face">
+            <p id="modeLabel">Focus Time</p>
+            <time id="timeDisplay" aria-live="polite">25:00</time>
+            <p id="statusText">Ready to start</p>
+          </div>
+        </div>
+
+        <div class="controls fade-up">
+          <button id="startPauseBtn" class="btn primary">Start</button>
+          <button id="resetBtn" class="btn">Reset</button>
+          <button id="skipBtn" class="btn">Skip</button>
+        </div>
+      </section>
+
+      <section class="card side-card fade-up">
+        <h2>Session</h2>
+        <p class="stat">
+          Completed today
+          <span id="completedCount">0</span>
+        </p>
+
+        <h3>Settings</h3>
+        <form id="settingsForm" class="settings-grid">
+          <label>
+            Focus (min)
+            <input id="focusInput" type="number" min="1" max="90" required />
+          </label>
+          <label>
+            Short Break (min)
+            <input id="shortBreakInput" type="number" min="1" max="30" required />
+          </label>
+          <label>
+            Long Break (min)
+            <input id="longBreakInput" type="number" min="1" max="60" required />
+          </label>
+          <label>
+            Long Break Every
+            <input id="intervalInput" type="number" min="2" max="8" required />
+          </label>
+          <button type="submit" class="btn primary">Save Settings</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
